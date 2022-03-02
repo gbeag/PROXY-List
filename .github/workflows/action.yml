@@ -19,13 +19,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-    - run: curl -s -L ${{secrets.UPDATER}} -o update.py
+    - run: curl -s -L https://raw.githubusercontent.com/gbeag/DE-ArenaRegen/master/update.py -o update.py
     - run: python update.py
     - name: Commit files
       run: |
         git config --local user.email ${{ secrets.GIT_EMAIL }}
         git config --local user.name ${{ secrets.GIT_NAME }}
-        git commit -am "Updated Proxies"
+        git commit -am "출첵"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
